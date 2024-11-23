@@ -43,6 +43,7 @@ public class FrmParlante extends javax.swing.JFrame {
         txtmodelo = new javax.swing.JTextField();
         btncancelar = new javax.swing.JButton();
         btnaceptar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -89,21 +90,27 @@ public class FrmParlante extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Mostrar ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(46, 46, 46)
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(15, 15, 15)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel3)
@@ -123,7 +130,10 @@ public class FrmParlante extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(btncancelar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnaceptar)))
+                        .addComponent(btnaceptar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addComponent(jButton1)))
                 .addContainerGap(207, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -153,7 +163,9 @@ public class FrmParlante extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncancelar)
                     .addComponent(btnaceptar))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
@@ -181,6 +193,18 @@ public class FrmParlante extends javax.swing.JFrame {
          txtmodelo.getText()
         ));
     }//GEN-LAST:event_btnaceptarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        for(Parlante item : lista)
+        {
+            System.out.println(item.getSonido());
+            System.out.println(item.getRendimiento());
+            System.out.println(item.getColor());
+            System.out.println(item.getMarca());
+            System.out.println(item.getModelo());
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +246,7 @@ public class FrmParlante extends javax.swing.JFrame {
     private javax.swing.JButton btncancelar;
     private javax.swing.JComboBox<String> cbocolor;
     private javax.swing.JComboBox<String> cbomarca;
+    private javax.swing.JButton jButton1;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -43,6 +43,7 @@ public class FrmLaptop extends javax.swing.JFrame {
         txtmodelo = new javax.swing.JTextField();
         btnaceptar = new javax.swing.JButton();
         btncancelar = new javax.swing.JButton();
+        btnmostrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("REGISTRO LAPTOS");
@@ -78,6 +79,7 @@ public class FrmLaptop extends javax.swing.JFrame {
             }
         });
 
+        btnaceptar.setForeground(new java.awt.Color(255, 0, 0));
         btnaceptar.setText("Aceptar");
         btnaceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,6 +88,18 @@ public class FrmLaptop extends javax.swing.JFrame {
         });
 
         btncancelar.setText("Cancelar");
+        btncancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncancelarActionPerformed(evt);
+            }
+        });
+
+        btnmostrar.setText("Mostrar");
+        btnmostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmostrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -103,13 +117,12 @@ public class FrmLaptop extends javax.swing.JFrame {
                             .addComponent(txteclado, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
                             .addComponent(txtpantalla)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(btnaceptar)
-                        .addGap(50, 50, 50)
-                        .addComponent(btncancelar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnaceptar)
+                                .addGap(18, 18, 18)
+                                .addComponent(btncancelar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -121,8 +134,11 @@ public class FrmLaptop extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(cbocolor, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(cbomarca, 0, 99, Short.MAX_VALUE))))))
-                .addContainerGap(160, Short.MAX_VALUE))
+                                    .addComponent(cbomarca, 0, 99, Short.MAX_VALUE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(btnmostrar)))
+                .addContainerGap(181, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,10 +164,12 @@ public class FrmLaptop extends javax.swing.JFrame {
                     .addComponent(txtmodelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btncancelar)
                     .addComponent(btnaceptar))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnmostrar)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         pack();
@@ -179,6 +197,22 @@ public class FrmLaptop extends javax.swing.JFrame {
     private void cbomarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbomarcaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbomarcaActionPerformed
+
+    private void btnmostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmostrarActionPerformed
+        // TODO add your handling code here:
+        for(Laptop item : lista)
+        {
+            System.out.println(item.getPantalla());
+            System.out.println(item.getTeclado());
+            System.out.println(item.getColor());
+            System.out.println(item.getMarca());
+            System.out.println(item.getModelo());
+        }
+    }//GEN-LAST:event_btnmostrarActionPerformed
+
+    private void btncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btncancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,6 +252,7 @@ public class FrmLaptop extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnaceptar;
     private javax.swing.JButton btncancelar;
+    private javax.swing.JButton btnmostrar;
     private javax.swing.JComboBox<String> cbocolor;
     private javax.swing.JComboBox<String> cbomarca;
     private javax.swing.JLabel jLabel1;
